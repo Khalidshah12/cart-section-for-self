@@ -48,7 +48,7 @@ function display(data) {
         p5.innerText = "SAVINGS"
         divLikeTable.append(p1, p2, p3, p4, p5)
 
-        data.forEach(function (elem,index) {
+        data.forEach(function (elem, index) {
 
             const allDetails = document.createElement('div');
             allDetails.setAttribute("id", "allDetails")
@@ -93,12 +93,12 @@ function display(data) {
             pMinus.style.cursor = "pointer"
             pMinus.addEventListener("click", minusFunction)
             function minusFunction() {
-                
-                if(count == 1){
-                    data.splice(index,1)
+
+                if (count == 1) {
+                    data.splice(index, 1)
                     // details.splice(index,1)
                     // var details = []
-                    localStorage.setItem("cart",JSON.stringify(data))
+                    localStorage.setItem("cart", JSON.stringify(details))
                     window.location.reload()
                     // window.opener.location.reload().href = "sampleData.html"
                 }
@@ -124,6 +124,7 @@ function display(data) {
                 pQuantity.innerText = count
                 sub = elem.price * pQuantity.innerText
                 subTotal.innerText = "Rs." + " " + sub.toFixed(2)
+
             }
 
             incDecQuantity.append(pMinus, pQuantity, pPlus)
@@ -134,14 +135,19 @@ function display(data) {
 
             subTotal.innerText = "Rs." + " " + sub.toFixed(2)
 
+
+            const deletelogo = document.createElement('p');
+            deletelogo.innerText = "x"
+            deletelogo.addEventListener("click", function(){
+                deleteItem(data,index)
+            })
+
             const saving = document.createElement('p');
             saving.style.color = "#BE1E2D"
-            var save = (elem.priceBefore - elem.price).toFixed(2)
+            var sav = (elem.priceBefore - elem.price).toFixed(2)
+            var save = sav
             saving.innerText = "Rs." + " " + save
-            itemDetails.append(itemDescription, unitPrice, incDecQuantity, subTotal, saving)
-
-
-
+            itemDetails.append(itemDescription, unitPrice, incDecQuantity, subTotal, deletelogo, saving)
 
             allDetails.append(categoryDiv, itemDetails)
             document.querySelector("#cont").append(allDetails)
@@ -149,5 +155,12 @@ function display(data) {
         })
     }
 
+
+    
+    function deleteItem(data,index) {
+        data.splice(index, 1)
+        localStorage.setItem("cart", JSON.stringify(details))
+        window.location.reload()
+    }
 
 }
