@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #cont{
+            display: flex;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="cont">
+
+    </div>
+</body>
+
+</html>
+
+<script>
+
+    var adata = [
+        {
+            category: "Foodgrains, Oil & Masala",
+            // itemquantity:"01 item ",
+            discount: 5,
+            productName: "Rice",
+            brandName:"Royal",
+            productQuantity: "5kg",
+            quantity:5,
+            priceDisplay: "Rs. 255.00",
+            price: 255,
+            priceBeforeDisplay: "Rs. 350.00",
+            priceBefore: 350,
+        },
+        {
+            category: "Foodgrains, Oil & Masala",
+            // itemquantity:"01 item ",
+            discount: 8,
+            productName: "Wheat",
+            brandName:"Sharbati",
+            productQuantity: "2kg",
+            quantity:2,
+            priceDisplay: "Rs. 150.00",
+            price: 150,
+            priceBeforeDisplay: "Rs. 200.00",
+            priceBefore: 200,
+        },
+        {
+            category: "Foodgrains, Oil & Masala",
+            // itemquantity:"01 item ",
+            discount: 5,
+            productName: "Rice",
+            brandName:"Royal",
+            productQuantity: "5kg",
+            quantity:5,
+            priceDisplay: "Rs. 255.00",
+            price: 255,
+            priceBeforeDisplay: "Rs. 350.00",
+            priceBefore: 350,
+        },
+        {
+            category: "Foodgrains, Oil & Masala",
+            // itemquantity:"01 item ",
+            discount: 8,
+            productName: "Wheat",
+            brandName:"Sharbati",
+            productQuantity: "2kg",
+            quantity:2,
+            priceDisplay: "Rs. 150.00",
+            price: 150,
+            priceBeforeDisplay: "Rs. 200.00",
+            priceBefore: 200,
+        },
+        {
+            category: "Foodgrains, Oil & Masala",
+            // itemquantity:"01 item ",
+            discount: 5,
+            productName: "Rice",
+            brandName:"Royal",
+            productQuantity: "5kg",
+            quantity:5,
+            priceDisplay: "Rs. 255.00",
+            price: 255,
+            priceBeforeDisplay: "Rs. 350.00",
+            priceBefore: 350,
+        },
+        {
+            category: "Foodgrains, Oil & Masala",
+            // itemquantity:"01 item ",
+            discount: 8,
+            productName: "Wheat",
+            brandName:"Sharbati",
+            productQuantity: "2kg",
+            quantity:2,
+            priceDisplay: "Rs. 150.00",
+            price: 150,
+            priceBeforeDisplay: "Rs. 200.00",
+            priceBefore: 200,
+        },
+        {
+            category: "Foodgrains, Oil & Masala",
+            // itemquantity:"01 item ",
+            discount: 5,
+            productName: "Rice",
+            brandName:"Royal",
+            productQuantity: "5kg",
+            quantity:5,
+            priceDisplay: "Rs. 255.00",
+            price: 255,
+            priceBeforeDisplay: "Rs. 350.00",
+            priceBefore: 350,
+        },
+        {
+            category: "Diapers",
+            // itemquantity:"01 item ",
+            discount: 8,
+            productName: "Pampers All-Round Protection Diaper Pants - Extra Large, 12-17 kg, Anti-Rash, Ultra Absorb, Leakage Prevention for upto 12 Hours, 112 pcs",
+            brandName:"Pampers",
+            productQuantity: "2kg",
+            quantity:2,
+            priceDisplay: "Rs. 200.00",
+            price: 200,
+            priceBeforeDisplay: "Rs. 341.95",
+            priceBefore: 341.95,
+        },
+    ];
+
+display(adata)
+    var details = JSON.parse(localStorage.getItem("cart")) || []
+
+    
+
+    function display(data){
+        data.forEach(function (elem) {
+            const div = document.createElement('div');
+            
+            const a = document.createElement('p');
+            a.innerText = elem.category
+            const b = document.createElement('p');
+            b.innerText = elem.productName
+            const c = document.createElement('p');
+            c.innerText = elem.priceDisplay
+            const d = document.createElement('p');
+            d.innerText = elem.priceBeforeDisplay
+            
+            const e = document.createElement('button');
+            e.innerText = "Add"
+            e.addEventListener("click",function(){
+                addfunc(elem)
+            })
+            
+            div.append(a,b,c,d,e)
+            document.querySelector('#cont').append(div)
+        })
+    }
+       function addfunc(elem){
+           details.push(elem)
+          
+           localStorage.setItem("cart",JSON.stringify(details))
+       }
+
+
+
+</script>

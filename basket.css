@@ -1,0 +1,228 @@
+body {
+    background-color: rgb(236, 236, 236);
+}
+
+#container {
+    width: 70%;
+    margin: auto;
+    height: auto;
+    background-color: white;
+    padding-left: 25px;
+    padding-right: 20px;
+}
+
+#yourbasket>h1 {
+    font-family: 'Roboto', sans-serif;
+    padding-top: 10px;
+}
+
+#topHrLine {
+    margin-top: -45px;
+}
+
+#availPromobtn {
+    background-color: rgb(252, 252, 252);
+    padding: 10px 15px 10px 15px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bolder;
+    border-radius: 5px;
+    border: 1px solid rgb(231, 150, 80);
+    margin-top: 10px;
+}
+
+#divLikeTable {
+    display: flex;
+    margin-top: 20px;
+    color: white;
+    /* border: 1px solid black; */
+}
+
+#divLikeTable>p {
+    width: 12.5%;
+    display: flex;
+    height: 40px;
+    font-size: 12px;
+    /* border: 1px solid black; */
+}
+
+#divLikeTable>p:nth-child(1) {
+    width: 50%;
+    align-items: center;
+    padding-left: 50px;
+    background-color: #555555;
+}
+
+#divLikeTable>p:nth-child(2) {
+    align-items: center;
+    justify-content: center;
+    background-color: #555555;
+}
+
+#divLikeTable>p:nth-child(3) {
+    align-items: center;
+    justify-content: center;
+    background-color: #555555;
+}
+
+#divLikeTable>p:nth-child(4) {
+    align-items: center;
+    justify-content: center;
+    background-color: #555555;
+}
+
+#divLikeTable>p:nth-child(5) {
+    align-items: center;
+    justify-content: center;
+    background-color: #C6CC74;
+}
+
+#categoryDiv {
+    background-color: #F3F3F3;
+    height: 30px;
+    margin-top: -12px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+
+
+
+
+
+
+
+#itemDetails {
+    display: flex;
+    height: auto;
+    margin-top: -13px;
+    height: 83px;
+    /* border: 1px solid black; */
+}
+
+#itemDetails>p {
+    /* border: 1px solid black; */
+    width: 12.5%;
+    display: flex;
+    font-size: 12px;
+}
+
+#itemDescription {
+    /* border: 1px solid black; */
+    width: 50%;
+    /* height: 40px; */
+    margin-top: 20px;
+    width: 50%;
+    padding-left: 20px;
+}
+
+#itemDescription>p:nth-child(1) {
+    font-size: 10px;
+    margin-bottom: -7px;
+}
+
+#itemDescription>p:nth-child(2) {
+    width: 50%;
+    font-size: 13px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+#unitPrice {
+    /* border: 1px solid black; */
+    width: 12.5%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#unitPrice>p:nth-child(1) {
+    font-size: 12px;
+    margin-bottom: -7px;
+}
+
+#unitPrice>p:nth-child(2) {
+    font-size: 10px;
+}
+
+#itemDetails>p:nth-child(4) {
+    align-items: center;
+    justify-content: center;
+}
+
+#itemDetails>p:nth-child(5) {
+    align-items: center;
+    justify-content: center;
+    border-left: 5px solid #F3F3F3;
+}
+
+#incDecQuantity {
+    width: 12.5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+}
+
+#incDecQuantity>p {
+    border: 1px solid rgb(209, 209, 209);
+    height: 20px;
+    width: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#incDecQuantity>p:nth-child(1) {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    background-color: #F3F3F3;
+    border-right: 0px;
+}
+
+#incDecQuantity>p:nth-child(2) {
+    width: 25%;
+    height: 20px;
+    width: 30px;
+
+}
+
+#incDecQuantity>p:nth-child(3) {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: #F3F3F3;
+    border-left: 0px;
+}
+input{
+    width: 20px;
+    height: 18px;
+    border: 1px solid rgb(209, 209, 209);
+    text-align: center;
+}
+input:focus{
+    outline: none;
+}
+
+#emptyBasket {
+    font-size: 11px;
+    padding: 10px 15px 10px 15px;
+    background-color: rgb(252, 252, 252);
+    border: 1px solid green;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+#checkoutDiv {
+    border: 1px solid black;
+    height: 250px;
+    width: 50%;
+}
+
+#allDetails{
+    width: 70%;
+    margin: auto;
+    background-color: white;
+}
+
+/* font-family: 'Roboto', sans-serif; */
+
+/* font-family: 'Lato', sans-serif; */
