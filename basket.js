@@ -21,7 +21,7 @@ function display(data) {
             window.location.href = "sampleData.html"
         }
 
-        document.querySelector("#container").append(noItem, hrline, continueShoppingButton)
+        document.querySelector("#nothingInBasket").append(noItem, hrline, continueShoppingButton)
     }
 
 
@@ -138,8 +138,8 @@ function display(data) {
 
             const deletelogo = document.createElement('p');
             deletelogo.innerText = "x"
-            deletelogo.addEventListener("click", function(){
-                deleteItem(data,index)
+            deletelogo.addEventListener("click", function () {
+                deleteItem(data, index)
             })
 
             const saving = document.createElement('p');
@@ -153,11 +153,95 @@ function display(data) {
             document.querySelector("#cont").append(allDetails)
             document.querySelector("#container").append(yourBasket, basketHrLine, promoButton, divLikeTable)
         })
+
+        // const productDetailsEndHrLine = document.createElement('hr');
+        // productDetailsEndHrLine.setAttribute("id","productDetailsEndHrLine")
+        // document.querySelector("#cont").append(productDetailsEndHrLine)
+
+
+        // Empty Basket button
+        const emptyBasketButton = document.createElement('div');
+        const emptyBasket = document.createElement('button');
+        emptyBasket.innerText = "EMPTY BASKET"
+        emptyBasket.addEventListener("click", emptyBasketFunction)
+        function emptyBasketFunction() {
+            document.querySelector("#container").innerHTML = ""
+            document.querySelector("#cont").innerHTML = ""
+            document.querySelector("#containerAfterProductDetail").innerHTML = ""
+            details = []
+            localStorage.setItem("cart", JSON.stringify(details))
+            window.location.reload()
+        }
+        emptyBasketButton.append(emptyBasket)
+        document.querySelector("#containerAfterProductDetail").append(emptyBasketButton)
+
+        const checkoutDiv = document.createElement('div');
+        document.querySelector("#containerAfterProductDetail").append(checkoutDiv)
+
+        const checkoutDiv1 = document.createElement('div');
+        const subTotalAndTotal = document.createElement('div');
+        const checkoutSubtotalAndDeliveryText = document.createElement('div');
+        const checkoutSubtotalAndDeliveryTextp1 = document.createElement('p');
+        const checkoutSubtotalAndDeliveryTextp2 = document.createElement('p');
+        checkoutSubtotalAndDeliveryText.append(checkoutSubtotalAndDeliveryTextp1,checkoutSubtotalAndDeliveryTextp2)
+
+
+        const checkoutSubtotalValue = document.createElement('div');
+        const checkoutSubtotalValuep1 = document.createElement('p');
+        const checkoutSubtotalValuep2 = document.createElement('p');
+        checkoutSubtotalValue.append(checkoutSubtotalValuep1,checkoutSubtotalValuep2)
+        subTotalAndTotal.append(checkoutSubtotalAndDeliveryText,checkoutSubtotalValue)
+
+
+        const checkoutSubTotal = document.createElement('div');
+        const checkoutSubTotalp1 = document.createElement('p');
+        const checkoutSubTotalp2 = document.createElement('p');
+
+        checkoutSubTotal(checkoutSubTotalp1,checkoutSubTotalp2)
+        const checkoutTotal = document.createElement('div');
+        subTotalAndTotal.append(checkoutSubTotal,checkoutTotal)
+
+
+        const saveDiv = document.createElement('div');
+        const saveDivImg = document.createElement('img');
+        saveDiv.append(saveDivImg)
+        checkoutDiv1.append(subTotalAndTotal,saveDiv)
+
+        const checkoutDiv2 = document.createElement('div');
+        const checkoutButton = document.createElement('button');
+        const deliveryInstruction = document.createElement('div');
+        checkoutDiv2.append(checkoutButton,deliveryInstruction)
+        checkoutDiv.append(checkoutDiv1,checkoutDiv2)
+
+
+
+        const subtotalText = document.createElement('p');
+        subtotalText.innerText = "Subtotal"
+        const subtotalDeliveryText = document.createElement('p');
+        subtotalDeliveryText.innerText = "Delivery Charges "
+
+        const subtotalValue = document.createElement('p');
+        subtotalValue.innerText = 150
+        const subtotalDeliveryvalue = document.createElement('p');
+        subtotalDeliveryvalue.innerText = "---"
+
+
+        const totalText = document.createElement('p');
+        totalText.innerText = "TOTAL"
+        const totalValue = document.createElement('p');
+        totalValue.innerText = 150
+
+        document.querySelector("#checkoutSubtotalAndDeliveryText").append(subtotalText, subtotalDeliveryText)
+        document.querySelector("#checkoutSubtotalValue").append(subtotalValue,subtotalDeliveryvalue)
+        document.querySelector("#checkoutTotal").append(totalText,totalValue)
+
+        // document.querySelector("#checkoutDiv2").append()
+        document.querySelector("#checkoutDiv3").append()
+
+        
     }
 
-
-    
-    function deleteItem(data,index) {
+    function deleteItem(data, index) {
         data.splice(index, 1)
         localStorage.setItem("cart", JSON.stringify(details))
         window.location.reload()
