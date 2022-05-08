@@ -107,6 +107,11 @@ function display(data) {
                     pQuantity.innerText = count
                     sub = elem.price * pQuantity.innerText
                     subTotal.innerText = "Rs." + " " + sub.toFixed(2)
+
+                    var k = (elem.priceBefore - elem.price).toFixed(2)
+                    sav = sav - k
+                    var save = sav.toFixed(2)
+                    saving.innerText = "Rs." + " " + save
                 }
 
             }
@@ -125,6 +130,11 @@ function display(data) {
                 sub = elem.price * pQuantity.innerText
                 subTotal.innerText = "Rs." + " " + sub.toFixed(2)
 
+
+                var k = (elem.priceBefore - elem.price)
+                sav = sav + k
+                var save = sav
+                saving.innerText = "Rs." + " " + save.toFixed(2)
             }
 
             incDecQuantity.append(pMinus, pQuantity, pPlus)
@@ -138,13 +148,14 @@ function display(data) {
 
             const deletelogo = document.createElement('p');
             deletelogo.innerText = "x"
+            deletelogo.style.cursor = "pointer"
             deletelogo.addEventListener("click", function () {
                 deleteItem(data, index)
             })
 
             const saving = document.createElement('p');
             saving.style.color = "#BE1E2D"
-            var sav = (elem.priceBefore - elem.price).toFixed(2)
+            var sav = (elem.priceBefore - elem.price)
             var save = sav
             saving.innerText = "Rs." + " " + save
             itemDetails.append(itemDescription, unitPrice, incDecQuantity, subTotal, deletelogo, saving)
@@ -154,18 +165,16 @@ function display(data) {
             document.querySelector("#container").append(yourBasket, basketHrLine, promoButton, divLikeTable)
         })
 
-        // const productDetailsEndHrLine = document.createElement('hr');
-        // productDetailsEndHrLine.setAttribute("id","productDetailsEndHrLine")
-        // document.querySelector("#cont").append(productDetailsEndHrLine)
-
-
         const containerAfterProductDetail = document.createElement('div');
+        containerAfterProductDetail.setAttribute("id", "containerAfterProductDetail")
         document.querySelector("body").append(containerAfterProductDetail)
 
         // Empty Basket button
         const emptyBasketButton = document.createElement('div');
+        emptyBasketButton.setAttribute("id", "emptyBasketButton")
         const emptyBasket = document.createElement('button');
         emptyBasket.innerText = "EMPTY BASKET"
+        emptyBasket.setAttribute("id", "emptyBasket")
         emptyBasket.addEventListener("click", emptyBasketFunction)
         function emptyBasketFunction() {
             document.querySelector("#container").innerHTML = ""
@@ -179,69 +188,71 @@ function display(data) {
         containerAfterProductDetail.append(emptyBasketButton)
 
         const checkoutDiv = document.createElement('div');
+        checkoutDiv.setAttribute("id", "checkoutDiv")
         containerAfterProductDetail.append(checkoutDiv)
 
         const checkoutDiv1 = document.createElement('div');
+        checkoutDiv1.setAttribute("id", "checkoutDiv1")
         const subTotalAndTotal = document.createElement('div');
+        subTotalAndTotal.setAttribute("id", "subTotalAndTotal")
+        const checkoutSubTotal = document.createElement('div');
+        checkoutSubTotal.setAttribute("id", "checkoutSubTotal")
         const checkoutSubtotalAndDeliveryText = document.createElement('div');
+        checkoutSubtotalAndDeliveryText.setAttribute("id", "checkoutSubtotalAndDeliveryText")
         const checkoutSubtotalAndDeliveryTextp1 = document.createElement('p');
+        checkoutSubtotalAndDeliveryTextp1.innerText = "Subtotal"
         const checkoutSubtotalAndDeliveryTextp2 = document.createElement('p');
-        checkoutSubtotalAndDeliveryText.append(checkoutSubtotalAndDeliveryTextp1,checkoutSubtotalAndDeliveryTextp2)
-
+        checkoutSubtotalAndDeliveryTextp2.innerText = "Delivery Charges"
+        checkoutSubtotalAndDeliveryText.append(checkoutSubtotalAndDeliveryTextp1, checkoutSubtotalAndDeliveryTextp2)
 
         const checkoutSubtotalValue = document.createElement('div');
+        checkoutSubtotalValue.setAttribute("id", "checkoutSubtotalValue")
         const checkoutSubtotalValuep1 = document.createElement('p');
+        checkoutSubtotalValuep1.innerText = "Rs. 200.00"
         const checkoutSubtotalValuep2 = document.createElement('p');
-        checkoutSubtotalValue.append(checkoutSubtotalValuep1,checkoutSubtotalValuep2)
-        subTotalAndTotal.append(checkoutSubtotalAndDeliveryText,checkoutSubtotalValue)
+        checkoutSubtotalValuep2.innerText = "**"
+        checkoutSubtotalValue.append(checkoutSubtotalValuep1, checkoutSubtotalValuep2)
+        checkoutSubTotal.append(checkoutSubtotalAndDeliveryText, checkoutSubtotalValue)
 
 
-        const checkoutSubTotal = document.createElement('div');
-        const checkoutSubTotalp1 = document.createElement('p');
-        const checkoutSubTotalp2 = document.createElement('p');
-
-        checkoutSubTotal(checkoutSubTotalp1,checkoutSubTotalp2)
         const checkoutTotal = document.createElement('div');
-        subTotalAndTotal.append(checkoutSubTotal,checkoutTotal)
+        checkoutTotal.setAttribute("id", "checkoutTotal")
+        const checkoutTotalp1 = document.createElement('p');
+        checkoutTotalp1.innerText = "TOTAL"
+        const checkoutTotalp2 = document.createElement('p');
+        checkoutTotalp2.innerText = "Rs. 200.00"
+        checkoutTotal.append(checkoutTotalp1, checkoutTotalp2)
+
+
+
+        subTotalAndTotal.append(checkoutSubTotal, checkoutTotal)
 
 
         const saveDiv = document.createElement('div');
-        const saveDivImg = document.createElement('img');
-        saveDiv.append(saveDivImg)
-        checkoutDiv1.append(subTotalAndTotal,saveDiv)
+        saveDiv.setAttribute("id", "saveDiv")
+        const saveDivImg = document.createElement('p');
+        saveDivImg.innerText = "logo"
+        const saveDivP1 = document.createElement('p');
+        saveDivP1.innerText = "You Saved!"
+        const saveDivP2 = document.createElement('p');
+        saveDivP2.innerText = "Saved Amout"
+
+        saveDiv.append(saveDivImg, saveDivP1, saveDivP2)
+        checkoutDiv1.append(subTotalAndTotal, saveDiv)
 
         const checkoutDiv2 = document.createElement('div');
+        checkoutDiv2.setAttribute("id", "checkoutDiv2")
         const checkoutButton = document.createElement('button');
+        checkoutButton.setAttribute("id", "checkoutButton")
+        checkoutButton.innerText = "CHECKOUT"
+        checkoutButton.style.cursor = "pointer"
         const deliveryInstruction = document.createElement('div');
-        checkoutDiv2.append(checkoutButton,deliveryInstruction)
-        checkoutDiv.append(checkoutDiv1,checkoutDiv2)
+        deliveryInstruction.innerText = "** Actual delivery charges computed at checkout time"
+        deliveryInstruction.setAttribute("id", "deliveryInstruction")
+        checkoutDiv2.append(checkoutButton, deliveryInstruction)
+        checkoutDiv.append(checkoutDiv1, checkoutDiv2)
 
 
-
-        const subtotalText = document.createElement('p');
-        subtotalText.innerText = "Subtotal"
-        const subtotalDeliveryText = document.createElement('p');
-        subtotalDeliveryText.innerText = "Delivery Charges "
-
-        const subtotalValue = document.createElement('p');
-        subtotalValue.innerText = 150
-        const subtotalDeliveryvalue = document.createElement('p');
-        subtotalDeliveryvalue.innerText = "---"
-
-
-        const totalText = document.createElement('p');
-        totalText.innerText = "TOTAL"
-        const totalValue = document.createElement('p');
-        totalValue.innerText = 150
-
-        document.querySelector("#checkoutSubtotalAndDeliveryText").append(subtotalText, subtotalDeliveryText)
-        document.querySelector("#checkoutSubtotalValue").append(subtotalValue,subtotalDeliveryvalue)
-        document.querySelector("#checkoutTotal").append(totalText,totalValue)
-
-        // document.querySelector("#checkoutDiv2").append()
-        document.querySelector("#checkoutDiv3").append()
-
-        
     }
 
     function deleteItem(data, index) {
@@ -249,5 +260,4 @@ function display(data) {
         localStorage.setItem("cart", JSON.stringify(details))
         window.location.reload()
     }
-
 }

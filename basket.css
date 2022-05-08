@@ -207,7 +207,8 @@ input:focus{
 } */
 
 #emptyBasket {
-    font-size: 11px;
+    width: 150px;
+    font-size: 12px;
     padding: 10px 15px 10px 15px;
     background-color: rgb(252, 252, 252);
     border: 1px solid green;
@@ -217,7 +218,7 @@ input:focus{
 
 #checkoutDiv {
     border: 1px solid black;
-    height: 250px;
+    height: 300px;
     width: 50%;
 }
 
@@ -242,55 +243,56 @@ input:focus{
 }
 
 #checkoutDiv {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     border-radius: 10px;
-    background-color: white;
 }
-
-/* #productDetailsEndHrLine{
-    
-} */
-
-#checkoutDiv1 {
+#checkoutDiv1{
     border: 1px solid black;
-    height: 65%;
+    height: 60%;
+    display: flex;
 }
+#subTotalAndTotal{
+    /* border: 1px solid black; */
+    width: 75%;
 
-/* #checkoutDiv2 {
-    border: 1px solid black;
-    height: 14%;
-} */
-
-#checkoutDiv3 {
-    border: 1px solid black;
-    height: 34%;
+    padding-left: 10px;
+    padding-right: 10px;
 }
-
-#checkoutTotalsD1 {
+#saveDiv{
+    border: 1px solid black;
+    width: 24%;
+    text-align: center;
+}
+#checkoutSubTotal{
     border-bottom: 1px solid black;
-}
-
-#checkoutSubtotal {
-    width: 70%;
     display: flex;
     justify-content: space-between;
-    border: 1px solid black;
-    padding-left: 15px;
-    padding-right: 15px;
-    margin-left: 5px;
-    margin-right: 5px;
-}
 
+    padding-left: 10px;
+    padding-right: 10px;
+}
 #checkoutTotal{
-    width: 70%;
     display: flex;
     justify-content: space-between;
-    border: 1px solid black;
-    padding-left: 15px;
-    padding-right: 15px;
-    margin-left: 5px;
-    margin-right: 5px;
+
+    padding-left: 10px;
+    padding-right: 10px;
 }
+#checkoutButton{
+    border: 0px;
+    height: 60px;
+    width: 40%;
+    font-size: 24px;
+    background: linear-gradient(180deg,#fee77c 0,#f2ca76 99%);
+    border-radius: 7px;
+    margin-top: 15px;
+    margin-left: 300px;
+}
+#deliveryInstruction{
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
 
 /* font-family: 'Roboto', sans-serif; */
 
