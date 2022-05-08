@@ -159,6 +159,9 @@ function display(data) {
         // document.querySelector("#cont").append(productDetailsEndHrLine)
 
 
+        const containerAfterProductDetail = document.createElement('div');
+        document.querySelector("body").append(containerAfterProductDetail)
+
         // Empty Basket button
         const emptyBasketButton = document.createElement('div');
         const emptyBasket = document.createElement('button');
@@ -167,16 +170,16 @@ function display(data) {
         function emptyBasketFunction() {
             document.querySelector("#container").innerHTML = ""
             document.querySelector("#cont").innerHTML = ""
-            document.querySelector("#containerAfterProductDetail").innerHTML = ""
+            containerAfterProductDetail.innerHTML = ""
             details = []
             localStorage.setItem("cart", JSON.stringify(details))
             window.location.reload()
         }
         emptyBasketButton.append(emptyBasket)
-        document.querySelector("#containerAfterProductDetail").append(emptyBasketButton)
+        containerAfterProductDetail.append(emptyBasketButton)
 
         const checkoutDiv = document.createElement('div');
-        document.querySelector("#containerAfterProductDetail").append(checkoutDiv)
+        containerAfterProductDetail.append(checkoutDiv)
 
         const checkoutDiv1 = document.createElement('div');
         const subTotalAndTotal = document.createElement('div');
